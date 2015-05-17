@@ -1,0 +1,19 @@
+<div style="padding-left:20px; padding-right:20px">
+    <div class="container">
+        <h2 ng-hide="editingProgram">Rediger program</h2>
+        <hr/>
+        <form name="editProgramForm">
+            <fieldset>
+                <label for="name">Program:</label>
+                <input id="name" type="text" required placeholder="Programnavn..."
+                       ng-model="program.name"><br>
+                <label for="description">Beskrivelse:</label>
+                <textarea id="description" type="text" required placeholder="Beskrivelse..."
+                       ng-model="program.description"></textarea>
+
+                <button type="submit" class="btn btn-primary" ng-click="saveProgram(program, editProgramForm)">Lagre
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</div>
