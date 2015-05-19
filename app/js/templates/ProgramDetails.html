@@ -1,13 +1,23 @@
+
 <div style="padding-left:20px; padding-right:20px">
     <div class="container" ng-model="program">
-        <h2 ng-hide="editingProgram">Program</h2>
-        <hr/>
+        <div class="top-block">
+            <div class="header">{{ program.name }}</div>
 
-        <h2>{{ program.name}}</h2><br>
-        <h3>Øvelser</h3>
-        <li ng-repeat="exercise in program.exercises">
-            {{ exercise.name }}
-        </li>
-        <li><a href="#/NewProgram">Rediger program</a></li>
+            <div class="row">
+                <div class="col-xs-3">Mål</div>
+                <div class="col-xs-9">{{ program.goal }}</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">Varighet</div>
+                <div class="col-xs-9">{{ program.start}} - {{ program.end}}</div>
+            </div>
+        </div>
+        <br/>
+        <div ng-repeat="day in program.days">
+            <a class="btn btn-lg btn-green"  ng-click="startTrainingDay(day)">Start {{ day.name }}</a>
+        </div>
+            <br/>
+            <a class="btn btn-lg btn-gray" href="#/NewProgram">Endre program</a>
     </div>
 </div>

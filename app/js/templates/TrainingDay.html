@@ -1,0 +1,13 @@
+<div style="padding-left:20px; padding-right:20px">
+    <div class="container" ng-model="program">
+        <div class="top-block">
+            <div class="header">{{ day.name }}</div>
+            <b>Trening {{ day.date }}</b>
+        </div>
+
+        <div ng-repeat="exercise in day.exercises">
+            <a class="btn btn-lg btn-green" ng-click="startTrainingExercise(day, exercise)">{{ exercise.name }} {{
+                exercise.set }}x{{exercise.reps}}</a>
+        </div>
+    </div>
+</div>
