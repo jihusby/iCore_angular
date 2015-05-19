@@ -7,11 +7,11 @@
                 <label for="name">Program:</label>
                 <input id="name" type="text" required placeholder="Programnavn..."
                        ng-model="program.name"><br>
-                <label for="description">Beskrivelse:</label>
-                <textarea id="description" type="text" required placeholder="Beskrivelse..."
-                       ng-model="program.description"></textarea>
+                <label for="description">Mål:</label>
+                <textarea id="description" type="text" required placeholder='{{ program.goal }}'
+                       ng-model="program.description"></textarea><br><br>
 
-                <button type="submit" class="btn btn-primary" ng-click="saveProgram(program, editProgramForm)">Lagre
+                <button type="submit" class="btn btn-primary btn-lg" ng-click="saveProgram(program, editProgramForm)">Lagre
                 </button>
             </fieldset>
         </form>

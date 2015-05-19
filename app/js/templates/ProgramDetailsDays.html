@@ -1,0 +1,12 @@
+<div style="padding-left:20px; padding-right:20px">
+    <div class="container" ng-model="program">
+        <h3>{{ program.days[0].name }}</h3><br>
+        <h4>Øvelser</h4>
+        <ul>
+            <li ng-repeat="exercise in program.days[0].exercises">
+                {{ exercise.name }}
+            </li>
+        </ul>
+        <li><a href="#/NewProgram">Rediger program</a></li>
+    </div>
+</div>

@@ -16,4 +16,15 @@ var myApp = angular.module('myApp', [
             templateUrl:'js/templates/NewProgram.html',
             controller: 'ProgramCtrl'
           });
+        $routeProvider.when('/TrainingDay/:id',
+            {
+                templateUrl:'js/templates/TrainingDay.html',
+                controller: 'DayCtrl'
+            });
+        $routeProvider.when('/TrainingExercise/:id',
+            {
+                templateUrl:'js/templates/TrainingExercise.html',
+                controller: 'ProgramCtrl'
+            });
+
     });
