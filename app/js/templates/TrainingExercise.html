@@ -5,9 +5,38 @@
             <b>Trening 17.05.2015 kl 06:15</b>
         </div>
         <form>
-            <div ng-repeat="set in exercise.sets">
-                heia {{ n }}
+            <div data-ng-repeat="i in sets">
+                <div class="row">
+                    <div class="col-xs-5">
+                        <input class="last-reps" value="5" name="last_set_{{setCounter}}" disabled>
+                        <input class="last-reps" value="8" name="last_set_{{setCounter}}" disabled>
+                    </div>
+                    <div class="col-xs-7">
+                        <input class="input-reps" name="weight_{{setCounter}}">
+                        <input class="input-reps" name="set_{{setCounter}}">
+                    </div>
+                </div>
             </div>
+            <div>
+                <button id="{{startSet}}" class="btn-success btn-watch" ng-click="countController()">{{pause}}{{counter
+                    }}</button>
+            </div>
+            <div>
+                <textarea class="input-comment" name="comment"></textarea>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button class="btn-success btn-last"> <span
+                                class="glyphicon glyphicon-arrow-left"></span> Forrige</button>
+                    </div>
+                    <div class="col-xs-6">
+                        <button class="btn-success btn-next">Neste <span
+                                class="glyphicon glyphicon-arrow-right"></span></button>
+                    </div>
+                </div>
+            </div>
+
         </form>
     </div>
 </div>
