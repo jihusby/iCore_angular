@@ -9,22 +9,22 @@ var myApp = angular.module('myApp', [
     .config(function($routeProvider) {
       $routeProvider.when('/ProgramDetails',
           {
-            templateUrl:'js/templates/ProgramDetails.html',
+            templateUrl:'app/js/templates/ProgramDetails.html',
             controller: 'ProgramCtrl'
           });
       $routeProvider.when('/NewProgram',
           {
-            templateUrl:'js/templates/NewProgram.html',
+            templateUrl:'app/js/templates/NewProgram.html',
             controller: 'ProgramCtrl'
           });
         $routeProvider.when('/TrainingDay/:dayId',
             {
-                templateUrl:'js/templates/TrainingDay.html',
+                templateUrl:'app/js/templates/TrainingDay.html',
                 controller: 'ProgramCtrl'
             });
         $routeProvider.when('/TrainingExercise/:dayId/:exerciseId',
             {
-                templateUrl:'js/templates/TrainingExercise.html',
+                templateUrl:'app/js/templates/TrainingExercise.html',
                 controller: 'ProgramCtrl'
             });
 
