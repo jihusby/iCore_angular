@@ -40,6 +40,7 @@
   },
   "dependencies": {
     "bower": "^1.4.1",
+    "ng-storage": "^0.3.2",
     "underscore": "^1.8.3"
   }
 }

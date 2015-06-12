@@ -1,22 +1,55 @@
 
-myApp.controller('ProgramCtrl', function InitCtrl($scope, underscore, programService, $routeParams, $timeout) {
+myApp.controller('ProgramCtrl', function InitCtrl($scope, underscore, programService, $routeParams, $timeout, $localStorage) {
 
     $scope.program = programService.program;
+
+    if($localStorage.dayResults == undefined){
+        $localStorage.dayResults = [];
+    }
+
     if($routeParams.dayId) {
         $scope.day = underscore.find($scope.program.days, function (rw) {
             return rw.id == $routeParams.dayId
         });
+
+        $localStorage.currentDayResult = underscore.find($localStorage.dayResults, function (rw) {
+            return rw.id == $localStorage.currentDayResult.id
+        });
+        if($localStorage.currentDayResult == undefined) {
+            console.log("Create new DayResult and add to DayResults");
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+            if (dd < 10) dd = '0' + dd
+            if (mm < 10) mm = '0' + mm
+            var today = dd + '.' + mm + '.' + yyyy;
+            $localStorage.currentDayResult = {
+                id: today,
+                dayId: $scope.day.id,
+                exercises: $scope.day.exercises
+            };
+            $scope.currentDayResult = $localStorage.currentDayResult;
+        }else{
+            console.log("DayResult exists, do not create");
+
+        }
+        $localStorage.dayResults.push($localStorage.currentDayResult);
+
+
+
+
         if ($routeParams.exerciseId) {
             $scope.exercise = underscore.find($scope.day.exercises, function (rw) {
                 return rw.id == $routeParams.exerciseId
             });
-
             var range = [];
             for(var i=0;i<$scope.exercise.set;i++) {
                 range.push(i);
             }
             $scope.sets = range;
             $scope.pause = "Start pause";
+
         }
     }
 
