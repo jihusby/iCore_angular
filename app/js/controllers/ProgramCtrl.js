@@ -29,6 +29,10 @@ myApp.controller('ProgramCtrl', function InitCtrl($scope, underscore, programSer
                 dayId: $scope.day.id,
                 exercises: $scope.day.exercises
             };
+            /* TODO:
+            Get previous day's dayResult and get the weight/reps for each exercise. Save to this one maybe?
+             */
+
             $scope.currentDayResult = $localStorage.currentDayResult;
         }else{
             console.log("DayResult exists, do not create");
