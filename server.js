@@ -4,8 +4,6 @@ var express = require('express'),
 var bodyParser = require("body-parser");
 
 var Program = require('./models/programModel');
-var Day = require('./models/dayModel');
-var Exercise = require('./models/exerciseModel');
 var Set = require('./models/setModel');
 
 var app = express();
